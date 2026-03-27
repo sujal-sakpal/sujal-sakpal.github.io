@@ -1,0 +1,227 @@
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg:      #0c0b09;
+      --surface: #131209;
+      --border:  #221f14;
+      --text:    #ccc5b0;
+      --muted:   #5a5444;
+      --dimmer:  #3a3428;
+      --accent:  #f0a500;
+      --white:   #ede8d8;
+      --font:    'JetBrains Mono', monospace;
+      --nav-offset: 88px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      font-size: 13px;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    /* ── Sticky nav bar ── */
+    .nav-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      width: 100%;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+    }
+
+    .nav-shell {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0.85rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      flex-wrap: wrap;
+    }
+
+    .site-name {
+      color: var(--accent);
+      font-weight: 500;
+      margin-right: 1.5rem;
+      letter-spacing: -0.3px;
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 12px;
+      padding: 0.15rem 0.4rem;
+      transition: color 0.12s;
+    }
+    nav a.hi,
+    nav a.active { color: var(--accent); }
+    nav a:hover  { color: var(--text); }
+    nav a.active { color: var(--accent); }
+    nav .sep { color: var(--border); user-select: none; }
+
+    .wrapper {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 6rem 2rem 6rem;
+    }
+
+    /* ── Section shell ── */
+    section {
+      margin-bottom: 3.5rem;
+      scroll-margin-top: var(--nav-offset);
+    }
+
+    .cmd-line {
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      margin-bottom: 0.8rem;
+    }
+    .prompt { color: var(--accent); user-select: none; }
+    .cmd    { color: var(--white); }
+    .flag   { color: var(--muted); }
+
+    .output {
+      padding-left: 1.4rem;
+      border-left: 1px solid var(--border);
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 3rem 0;
+    }
+
+    /* ── Whoami ── */
+    .whoami-name {
+      color: var(--accent);
+      font-size: 20px;
+      font-weight: 500;
+      letter-spacing: -0.5px;
+    }
+    .whoami-role  { color: var(--white); margin-top: 0.15rem; }
+    .whoami-note  { color: var(--muted); margin-top: 0.1rem; }
+    .whoami-status {
+      margin-top: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .whoami-status .hl { color: var(--text); }
+    .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+      animation: pulse 2.2s ease-in-out infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.25} }
+
+    /* ── Projects ── */
+    .project-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+    @media (max-width: 540px) { .project-grid { grid-template-columns: 1fr; } }
+
+    .project {
+      border: 1px solid var(--border);
+      padding: 0.9rem 1rem;
+      text-decoration: none;
+      display: block;
+      transition: border-color 0.15s;
+    }
+    .project:hover { border-color: var(--accent); }
+
+    .project-name { color: var(--white); font-weight: 500; font-size: 13px; }
+    .project-date { color: var(--muted); font-size: 11px; margin-top: 0.1rem; }
+    .project-desc {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 0.35rem;
+      line-height: 1.6;
+    }
+    .project-tags {
+      margin-top: 0.65rem;
+      display: flex;
+      gap: 0.45rem;
+      flex-wrap: wrap;
+    }
+    .tag { color: var(--accent); font-size: 11px; opacity: 0.6; }
+
+    /* ── Skills ── */
+    .skill-table {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      column-gap: 1.5rem;
+      row-gap: 0.45rem;
+    }
+    .sk-label { color: var(--muted); white-space: nowrap; }
+    .sk-value { color: var(--text); }
+    .sk-value .hi  { color: var(--accent); }
+    .sk-value .dim { color: var(--dimmer); }
+    .sk-value .mid { color: var(--muted); }
+
+    /* ── Blog ── */
+    .blog-coming { display: flex; flex-direction: column; gap: 0.35rem; }
+    .blog-coming-header { color: var(--accent); opacity: 0.6; font-size: 12px; margin-bottom: 0.4rem; }
+
+    .blog-placeholder-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.55rem 0.75rem;
+      border: 1px solid var(--border);
+      opacity: 0.38;
+    }
+    .bp-label {
+      font-size: 10px;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      padding: 0 4px;
+      flex-shrink: 0;
+    }
+    .bp-title { color: var(--text); font-size: 12.5px; }
+
+    .blog-note {
+      margin-top: 1.1rem;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .blog-note .hi { color: var(--accent); }
+
+    /* ── Contact ── */
+    .contact-block { font-size: 13px; line-height: 2.1; }
+    .contact-block .brace { color: var(--muted); }
+    .contact-block .key   { color: var(--muted); padding-left: 1.25rem; }
+    .contact-block .val-text { color: var(--text); }
+    .contact-block a {
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+      transition: color 0.12s, border-color 0.12s;
+    }
+    .contact-block a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+    .contact-block .val-accent a { color: var(--accent); border: none; }
+
+    /* ── Cursor ── */
+    .cursor {
+      display: inline-block;
+      width: 7px; height: 13px;
+      background: var(--accent);
+      vertical-align: middle;
+      margin-left: 2px;
+      animation: blink 1s step-end infinite;
+    }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+    .footer { margin-top: 4rem; color: var(--border); font-size: 11px; }

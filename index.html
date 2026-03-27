@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>~/sujal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="nav-bar">
+    <nav class="nav-shell">
+      <span class="site-name"><a href="#about">~/sujal</a></span>
+      <a href="#about" class="active">about</a>
+      <span class="sep">/</span>
+      <a href="#projects">projects</a>
+      <span class="sep">/</span>
+      <a href="#skills">skills</a>
+      <span class="sep">/</span>
+      <a href="#blog">blog</a>
+      <span class="sep">/</span>
+      <a href="#contact">contact</a>
+    </nav>
+  </header>
+
+  <div class="wrapper">
+
+  <!-- About -->
+  <section id="about">
+    <div class="cmd-line">
+      <span class="prompt">$</span>
+      <span class="cmd">whoami</span>
+    </div>
+    <div class="output">
+      <div class="whoami-name">Sujal Sakpal</div>
+      <div class="whoami-role">Electronics Engineer &mdash; building at the intersection of AI &amp; systems</div>
+      <div class="whoami-note">VJTI Mumbai &middot; B.Tech Electronics Engineering</div>
+      <div class="whoami-status">
+        <span class="dot"></span>
+        Currently: <span class="hl">&nbsp;Student @ VJTI &nbsp;&middot;&nbsp; Open to opportunities</span>
+      </div>
+    </div>
+  </section>
+
+  <hr />
+
+  <!-- Projects -->
+  <section id="projects">
+    <div class="cmd-line">
+      <span class="prompt">$</span>
+      <span class="cmd">ls projects/</span>
+      <span class="flag">&nbsp;--sort=recent</span>
+    </div>
+    <div class="project-grid">
+
+      <a class="project" href="https://github.com/sujal-sakpal/code_generation" target="_blank" rel="noopener">
+        <div class="project-name">CodeGen</div>
+        <div class="project-date">Oct 2024</div>
+        <div class="project-desc">Agentic AI platform generating multiple solution strategies for competitive programming using knowledge graphs &amp; RAG.</div>
+        <div class="project-tags">
+          <span class="tag">#crewai</span>
+          <span class="tag">#neo4j</span>
+          <span class="tag">#faiss</span>
+          <span class="tag">#fastapi</span>
+        </div>
+      </a>
+
+      <a class="project" href="https://github.com/sujal-sakpal" target="_blank" rel="noopener">
+        <div class="project-name">Event Platform</div>
+        <div class="project-date">Dec 2024</div>
+        <div class="project-desc">Full-stack event management with ticket sales, Stripe payments, Clerk auth, and real-time file uploads.</div>
+        <div class="project-tags">
+          <span class="tag">#nextjs</span>
+          <span class="tag">#stripe</span>
+          <span class="tag">#mongodb</span>
+        </div>
+      </a>
+
+      <a class="project" href="https://github.com/sujal-sakpal" target="_blank" rel="noopener">
+        <div class="project-name">Grammarator</div>
+        <div class="project-date">Aug 2024</div>
+        <div class="project-desc">Fine-tuned Flan-T5 with LoRA on JFLEG for accurate, efficient grammar correction with a stepwise validation pipeline.</div>
+        <div class="project-tags">
+          <span class="tag">#transformers</span>
+          <span class="tag">#lora</span>
+          <span class="tag">#pytorch</span>
+        </div>
+      </a>
+
+      <a class="project" href="https://github.com/sujal-sakpal/Movie-Recommendation-System" target="_blank" rel="noopener">
+        <div class="project-name">Movie Recommender</div>
+        <div class="project-date">Sept 2024</div>
+        <div class="project-desc">Content-based recommendation engine using TF-IDF &amp; cosine similarity on movie metadata, served via FastAPI.</div>
+        <div class="project-tags">
+          <span class="tag">#sklearn</span>
+          <span class="tag">#fastapi</span>
+          <span class="tag">#nlp</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <hr />
+
+  <!-- Skills -->
+  <section id="skills">
+    <div class="cmd-line">
+      <span class="prompt">$</span>
+      <span class="cmd">cat skills.txt</span>
+    </div>
+    <div class="output">
+      <div class="skill-table">
+
+        <span class="sk-label">ai / ml</span>
+        <span class="sk-value">
+          <span class="hi">LangChain</span> &middot;
+          <span class="hi">HuggingFace</span> &middot;
+          <span class="hi">CrewAI</span> &middot;
+          <span class="hi">PyTorch</span> &middot;
+          <span class="hi">Scikit-learn</span>
+        </span>
+
+        <span class="sk-label">backend</span>
+        <span class="sk-value">
+          <span class="hi">FastAPI</span> &middot;
+          <span class="hi">Next.js</span> &middot;
+          <span class="hi">Python</span> &middot;
+          <span class="hi">JavaScript</span>
+        </span>
+
+        <span class="sk-label">databases</span>
+        <span class="sk-value">
+          <span class="hi">Neo4j</span> &middot;
+          <span class="hi">FAISS</span> &middot;
+          <span class="hi">MongoDB</span> &middot;
+          <span class="hi">Pandas / NumPy</span>
+        </span>
+
+        <span class="sk-label">frontend</span>
+        <span class="sk-value">
+          <span class="hi">Tailwind CSS</span> &middot;
+          <span class="hi">HTML / CSS</span> &middot;
+          <span class="hi">JavaScript</span>
+        </span>
+
+        <span class="sk-label">interests</span>
+        <span class="sk-value hi">
+          agentic systems &middot; RAG pipelines &middot; NLP &middot; competitive programming
+        </span>
+
+      </div>
+    </div>
+  </section>
+
+  <hr />
+
+  <!-- Blog -->
+  <section id="blog">
+    <div class="cmd-line">
+      <span class="prompt">$</span>
+      <span class="cmd">ls blog/</span>
+    </div>
+    <div class="output">
+      <div class="blog-coming">
+        <div class="blog-coming-header">// coming soon — posts are in the works</div>
+
+        <div class="blog-placeholder-row">
+          <span class="bp-label">SOON</span>
+          <span class="bp-title">Why I fine-tuned T5 instead of prompting GPT-4</span>
+        </div>
+      </div>
+      <div class="blog-note">
+        &mdash; reach out if you want to discuss any of these topics early.
+      </div>
+    </div>
+  </section>
+
+  <hr />
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="cmd-line">
+      <span class="prompt">$</span>
+      <span class="cmd">curl contact.json</span>
+    </div>
+    <div class="output">
+      <div class="contact-block">
+        <div class="brace">{</div>
+        <div>
+          <span class="key">"email":&nbsp;&nbsp;&nbsp;&nbsp;</span>
+          <span class="val-text">"sakpalsujal121@gmail.com"</span>
+        </div>
+        <div>
+          <span class="key">"github":&nbsp;&nbsp;&nbsp;</span>
+          <a href="https://github.com/sujal-sakpal" target="_blank" rel="noopener">"github.com/sujal-sakpal"</a>
+        </div>
+        <div>
+          <span class="key">"linkedin":&nbsp;</span>
+          <a href="https://www.linkedin.com/in/sujal-sakpal-4b5724282/" target="_blank" rel="noopener">"linkedin.com/in/sujalsakpal"</a>
+        </div>
+        <div>
+          <span class="key">"resume":&nbsp;&nbsp;&nbsp;</span>
+          <span class="val-accent"><a href="sujal_resume_final1.pdf" target="_blank">"sujal_resume.pdf"</a></span>
+        </div>
+        <div class="brace">}</div>
+      </div>
+    </div>
+
+  </section>
+
+  <div class="footer">
+    <span style="color:var(--accent);opacity:0.2">$</span> <span class="cursor"></span>
+  </div>
+
+</div>
+
+  <script>
+    const navLinks = Array.from(document.querySelectorAll('.nav-shell a'));
+    const sections = Array.from(document.querySelectorAll('section[id]'));
+    const navOffset = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-offset'), 10) || 0;
+
+    const highlightNav = () => {
+      const scrollTop = window.scrollY + navOffset + 5;
+      let current = sections[0];
+      for (const section of sections) {
+        if (scrollTop >= section.offsetTop) {
+          current = section;
+        }
+      }
+
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 5) {
+        current = sections[sections.length - 1];
+      }
+
+      navLinks.forEach(link => {
+        const match = link.getAttribute('href') === `#${current.id}`;
+        link.classList.toggle('hi', match);
+        link.classList.toggle('active', match);
+      });
+    };
+
+    window.addEventListener('scroll', highlightNav, { passive: true });
+    window.addEventListener('resize', highlightNav);
+    highlightNav();
+  </script>
+</body>
+</html>
