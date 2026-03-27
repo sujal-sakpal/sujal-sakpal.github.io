@@ -217,11 +217,17 @@
 </div>
 
   <script>
+    const navBar = document.querySelector('.nav-bar');
     const navLinks = Array.from(document.querySelectorAll('.nav-shell a'));
     const sections = Array.from(document.querySelectorAll('section[id]'));
-    const navOffset = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-offset'), 10) || 0;
+
+    const updateNavOffset = () => {
+      const height = navBar.getBoundingClientRect().height;
+      document.documentElement.style.setProperty('--nav-offset', `${height}px`);
+    };
 
     const highlightNav = () => {
+      const navOffset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--nav-offset')) || navBar.getBoundingClientRect().height;
       const scrollTop = window.scrollY + navOffset + 5;
       let current = sections[0];
       for (const section of sections) {
@@ -242,7 +248,23 @@
     };
 
     window.addEventListener('scroll', highlightNav, { passive: true });
-    window.addEventListener('resize', highlightNav);
+    window.addEventListener('resize', () => {
+      updateNavOffset();
+      highlightNav();
+    });
+    window.addEventListener('load', () => {
+      updateNavOffset();
+      highlightNav();
+    });
+
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(() => {
+        updateNavOffset();
+        highlightNav();
+      });
+    }
+
+    updateNavOffset();
     highlightNav();
   </script>
 </body>

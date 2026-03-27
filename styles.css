@@ -168,6 +168,7 @@
     .sk-label { color: var(--muted); white-space: nowrap; }
     .sk-value { color: var(--text); }
     .sk-value .hi  { color: var(--accent); }
+    .sk-value.hi { color: var(--accent); }
     .sk-value .dim { color: var(--dimmer); }
     .sk-value .mid { color: var(--muted); }
 
